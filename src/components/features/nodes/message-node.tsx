@@ -28,10 +28,10 @@ export default function MessageNode({ id, data }: MessageNodeProps) {
         isSelected && "outline-primary"
       )}
     >
-      <Handle id="target" type="target" position={Position.Left} />
+      <Handle id={`target-${id}`} type="target" position={Position.Left} />
       <div className="space-y-2">
         <div className="rounded-md bg-muted border border-dashed border-foreground flex items-center gap-2 w-fit px-2 py-0.5">
-          {Icon &&<Icon className="size-3" />}
+          {Icon && <Icon className="size-3" />}
           <span className="text-xs font-semibold flex-1">Send Message</span>
         </div>
         <div className="py-2">
@@ -40,7 +40,7 @@ export default function MessageNode({ id, data }: MessageNodeProps) {
           </span>
         </div>
       </div>
-      <Handle id="source" type="source" position={Position.Right} />
+      <Handle id={`source-${id}`} type="source" position={Position.Right} />
     </div>
   );
 }

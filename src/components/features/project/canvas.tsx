@@ -66,13 +66,6 @@ export default function Canvas() {
    */
   const onConnect = useCallback(
     (params: Connection) => {
-      const exists = edges.some(
-        (e) =>
-          e.source === params.source && e.sourceHandle === params.sourceHandle
-      );
-      // Prevent duplicate edges
-      if (exists) return;
-
       setEdges((es) =>
         addEdge(
           {
